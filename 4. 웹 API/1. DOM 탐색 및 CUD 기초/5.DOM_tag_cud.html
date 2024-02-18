@@ -18,22 +18,30 @@
         const $firstItem = $parent.firstElementChild;
 
         // 새로운 요소 추가
-        const newElement = document.createElement('li');
-        newElement.textContent = '치즈돌솥비빔밥';
-        newElement.classList.add('food');
-        console.log(newElement);
-        $parent.insertBefore(newElement, $firstItem);
+        const newElement1 = document.createElement('li');
+        newElement1.textContent = '치즈돌솥비빔밥';
+        newElement1.classList.add('food');
+        const newElement2 = document.createElement('li');
+        newElement2.textContent = '도미노피자';
+        newElement2.classList.add('food');
+
+
+        // 맨 앞 또는 중간에 추가할 경우
+        $parent.insertBefore(newElement1, $firstItem);
+        // 맨 뒤에 추가할 경우
+        $parent.appendChild(newElement2);
+
+        // 기존 요소 교체
+        const newElement3 = document.createElement('li');
+        newElement3.textContent = '볶음밥';
+        newElement4.classList.add('food')
+        console.log($parent.children[1]);
+        $parent.replaceChild(newElement3, $parent.children[1]);
 
         // 기존 요소 삭제
         console.log($parent.children[2]);
         $parent.removeChild($parent.children[2]);
 
-        // 기존 요소 교체
-        const newElement2 = document.createElement('li');
-        newElement2.textContent = '볶음밥';
-        newElement2.classList.add('food')
-        console.log($parent.children[1]);
-        $parent.replaceChild(newElement2, $parent.children[1]);
     </script>
 </body>
 </html>
