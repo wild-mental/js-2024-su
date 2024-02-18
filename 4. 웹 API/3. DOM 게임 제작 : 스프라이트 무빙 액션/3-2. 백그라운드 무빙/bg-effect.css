@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* 페이지 스크롤을 막습니다. */
+}
+
+.container-xxl {
+    /*  위치 기준점을 잡아 줌  */
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /*  타운맵을 가운데 정렬  */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.town-map {
+    /*  타운맵 이미지 설정  */
+    background-image: url('../pokemon_town_map.png');
+    background-size: cover;
+    background-repeat: repeat;
+    /*  JS 이벤트에 따른 이동을 위해 position absolute 설정  */
+    position: absolute;
+    /*  상하 정렬은 상단 고정  */
+    top: 0;
+    /*  가로는 flex 에 따른 중앙정렬  */
+    left: auto;
+    min-width: 2220px;
+    height: 100vh;
+    /*  백그라운드 이동 효과에 적용을 위한 transition 설정  */
+    transition: 200ms linear;
+}
+
+#user-character {
+    position: absolute;
+    top: 35vh;
+    left: 35vw;
+    animation-fill-mode: forwards;
+    transition: forward-step, backward-step, left-step, right-step 500ms linear 0s,
+                transform 100ms linear 0s;
+}
