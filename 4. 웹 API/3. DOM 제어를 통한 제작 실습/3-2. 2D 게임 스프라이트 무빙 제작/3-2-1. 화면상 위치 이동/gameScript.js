@@ -71,11 +71,12 @@ document.addEventListener('keydown', (event) => {
     //     default:
     //         break;
     // }
-    // 함수객체 적용 버전
+
+    // 4-3-2. 함수객체 적용 버전
     moveTo[key]();
 
     // 4. 캐릭터 위치 이동
-    $userCharacter.style.transform = `translate(${characterLocation.x}px, ${characterLocation.y}px)`;
+    $userCharacter.setAttribute('style', `transform: translate(${characterLocation.x}px, ${characterLocation.y}px)`);
 });
 
 // 5. 방향키 입력 종료 감지 리스너 부착
