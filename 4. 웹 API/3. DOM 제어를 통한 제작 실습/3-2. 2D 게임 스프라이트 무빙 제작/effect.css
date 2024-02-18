@@ -1,0 +1,193 @@
+/*  캐릭터 애니메이팅  */
+#user-character {
+    background-image: url('img_character/front_stand.png');
+    width: 120px;
+    height: 130px;
+    overflow: hidden;
+    animation-fill-mode: forwards;
+    transition: forward-step, backward-step, left-step, right-step 500ms linear 0s,
+                transform 200ms linear 0s;
+}
+
+@keyframes forward-step {
+    0% {
+        background-image: url('img_character/front_stand.png');
+    }
+    10% {
+        background-image: url('img_character/front_walk0.png');
+    }
+    20% {
+        background-image: url('img_character/front_walk1.png');
+    }
+    30% {
+        background-image: url('img_character/front_walk2.png');
+    }
+    40% {
+        background-image: url('img_character/front_walk3.png');
+    }
+    50% {
+        background-image: url('img_character/front_walk4.png');
+
+    }
+    60% {
+        background-image: url('img_character/front_walk5.png');
+    }
+    70% {
+        background-image: url('img_character/front_walk6.png');
+    }
+    80% {
+        background-image: url('img_character/front_walk7.png');
+    }
+    90% {
+        background-image: url('img_character/front_walk8.png');
+    }
+    100% {
+        background-image: url('img_character/front_walk9.png');
+    }
+}
+
+.pause-forward {
+    animation: forward-step 500ms infinite;
+    animation-play-state: paused;
+}
+.running-forward {
+    animation: forward-step 500ms infinite;
+    animation-play-state: running;
+}
+
+@keyframes backward-step {
+    0% {
+        background-image: url('img_character/back_stand.png');
+    }
+    10% {
+        background-image: url('img_character/back_walk0.png');
+    }
+    20% {
+        background-image: url('img_character/back_walk1.png');
+    }
+    30% {
+        background-image: url('img_character/back_walk2.png');
+    }
+    40% {
+        background-image: url('img_character/back_walk3.png');
+    }
+    50% {
+        background-image: url('img_character/back_walk4.png');
+
+    }
+    60% {
+        background-image: url('img_character/back_walk5.png');
+    }
+    70% {
+        background-image: url('img_character/back_walk6.png');
+    }
+    80% {
+        background-image: url('img_character/back_walk7.png');
+    }
+    90% {
+        background-image: url('img_character/back_walk8.png');
+    }
+    100% {
+        background-image: url('img_character/back_walk9.png');
+    }
+}
+
+.pause-backward {
+    animation: backward-step 500ms infinite;
+    animation-play-state: paused;
+}
+.running-backward {
+    animation: backward-step 500ms infinite;
+    animation-play-state: running;
+}
+
+@keyframes left-step {
+    0% {
+        background-image: url('img_character/left_stand.png');
+    }
+    10% {
+        background-image: url('img_character/left_walk0.png');
+    }
+    20% {
+        background-image: url('img_character/left_walk1.png');
+    }
+    30% {
+        background-image: url('img_character/left_walk2.png');
+    }
+    40% {
+        background-image: url('img_character/left_walk3.png');
+    }
+    50% {
+        background-image: url('img_character/left_walk4.png');
+
+    }
+    60% {
+        background-image: url('img_character/left_walk5.png');
+    }
+    70% {
+        background-image: url('img_character/left_walk6.png');
+    }
+    80% {
+        background-image: url('img_character/left_walk7.png');
+    }
+    90% {
+        background-image: url('img_character/left_walk8.png');
+    }
+    100% {
+        background-image: url('img_character/left_walk9.png');
+    }
+}
+
+.pause-left {
+    animation: left-step 500ms infinite;
+    animation-play-state: paused;
+}
+.running-left {
+    animation: left-step 500ms infinite;
+    animation-play-state: running;
+}
+
+@keyframes right-step {
+    0% {
+        background-image: url('img_character/right_stand.png');
+    }
+    10% {
+        background-image: url('img_character/right_walk0.png');
+    }
+    20% {
+        background-image: url('img_character/right_walk1.png');
+    }
+    30% {
+        background-image: url('img_character/right_walk2.png');
+    }
+    40% {
+        background-image: url('img_character/right_walk3.png');
+    }
+    50% {
+        background-image: url('img_character/right_walk4.png');
+    }
+    60% {
+        background-image: url('img_character/right_walk5.png');
+    }
+    70% {
+        background-image: url('img_character/right_walk6.png');
+    }
+    80% {
+        background-image: url('img_character/right_walk7.png');
+    }
+    90% {
+        background-image: url('img_character/right_walk8.png');
+    }
+    100% {
+        background-image: url('img_character/right_walk9.png');
+    }
+}
+
+.pause-right {
+    animation: right-step 500ms infinite;
+    animation-play-state: paused;
+}
+.running-right {
+    animation: right-step 500ms infinite;
+    animation-play-state: running;
+}
