@@ -26,7 +26,6 @@
     }
     50% {
         background-image: url('img_character/front_walk4.png');
-
     }
     60% {
         background-image: url('img_character/front_walk5.png');
@@ -72,7 +71,6 @@
     }
     50% {
         background-image: url('img_character/back_walk4.png');
-
     }
     60% {
         background-image: url('img_character/back_walk5.png');
@@ -118,7 +116,6 @@
     }
     50% {
         background-image: url('img_character/left_walk4.png');
-
     }
     60% {
         background-image: url('img_character/left_walk5.png');
