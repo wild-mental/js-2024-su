@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS 선택자를 통해 Text 를 변경하고 조작합니다.</title>
+    <style >
+
+    </style>
+</head>
+<body>
+    <p id="myFavorite" class="paragraph">
+        <span class="sentence1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis consequuntur cumque debitis doloribus, ducimus fuga hic molestias natus nobis odit officia optio placeat praesentium quae repellendus tenetur ut! Atque, vero!</span>
+        <br>
+        <span class="sentence2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At magni maiores provident! Beatae commodi, cumque earum ipsam magni porro recusandae repellendus! Aperiam beatae dolor esse hic odit quisquam repellat voluptas?</span>
+        <br>
+        <span class="sentence3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aspernatur at blanditiis consectetur corporis deleniti, earum impedit magnam nemo non numquam odit porro praesentium provident sunt temporibus veniam vero voluptatem!</span>
+        <br>
+        <span class="sentence4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad dicta dolorem doloremque dolores est labore, laboriosam neque officia ut voluptate. Deleniti est excepturi libero magnam omnis reprehenderit sunt vitae! Quia?</span>
+        <br>
+        <span class="sentence5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquid aperiam architecto atque, deleniti dicta dolor et eveniet hic magnam necessitatibus perspiciatis placeat quaerat, quam rem repudiandae rerum sint temporibus.</span>
+    </p>
+    <script>
+        const sentences = document.getElementsByTagName('span');
+        console.log(sentences.item(2));
+        // sentences[2].innerHTML = "<strong>JavaScript (JS)는 가벼운, 인터프리터 혹은 just-in-time 컴파일 프로그래밍 언어로, 일급 함수를 지원합니다. 웹 페이지를 위한 스크립트 언어로 잘 알려져 있지만, Node.js, Apache CouchDB, Adobe Acrobat처럼 많은 비 브라우저 환경에서도 사용하고 있습니다. JavaScript는 프로토타입 기반, 다중 패러다임, 단일 스레드, 동적 언어로, 객체지향형, 명령형, 선언형(함수형 프로그래밍 등) 스타일을 지원합니다.\n</strong>";
+        sentences[2].innerHTML = `<i>${sentences[2].innerText}</i>`;
+    </script>
+</body>
+</html>

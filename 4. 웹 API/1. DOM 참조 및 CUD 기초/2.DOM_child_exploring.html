@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>자식노드를 탐색합니다.</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<p id="myFavorite" class="paragraph">
+    <span class="sentence1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis consequuntur cumque debitis doloribus, ducimus fuga hic molestias natus nobis odit officia optio placeat praesentium quae repellendus tenetur ut! Atque, vero!</span>
+    <br>
+    <span class="sentence2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At magni maiores provident! Beatae commodi, cumque earum ipsam magni porro recusandae repellendus! Aperiam beatae dolor esse hic odit quisquam repellat voluptas?</span>
+    <br>
+    <span class="sentence3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aspernatur at blanditiis consectetur corporis deleniti, earum impedit magnam nemo non numquam odit porro praesentium provident sunt temporibus veniam vero voluptatem!</span>
+    <br>
+    <span class="sentence4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad dicta dolorem doloremque dolores est labore, laboriosam neque officia ut voluptate. Deleniti est excepturi libero magnam omnis reprehenderit sunt vitae! Quia?</span>
+    <br>
+    <span class="sentence5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquid aperiam architecto atque, deleniti dicta dolor et eveniet hic magnam necessitatibus perspiciatis placeat quaerat, quam rem repudiandae rerum sint temporibus.</span>
+</p>
+
+<script>
+    // 자식 요소 탐색
+    const $parent = document.getElementsByClassName('paragraph')[0];
+    console.log($parent);
+    const $children = $parent.children;
+    console.log($children);
+    const $firstChild = $parent.firstElementChild;
+    const $lastChild = $parent.lastElementChild;
+    $firstChild.style.color = 'red';
+    $lastChild.style.color = 'blue';
+
+    // 형제 요소 탐색
+    // console.log($firstChild.nextSibling);
+    // $firstChild.nextSibling.style.color = 'red';
+    // console.log($lastChild.previousSibling);
+    // $lastChild.previousSibling.style.color = 'blue';
+
+    // 부모노드 탐색
+    console.log("부모 노드 탐색")
+    console.log($firstChild.parentNode);
+    console.log("부모 요소 탐색")
+    console.log($firstChild.parentElement);
+</script>
+</body>
+</html>

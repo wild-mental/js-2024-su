@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS 선택자를 활용한 JS DOM 객체 선택</title>
+  <style>
+
+  </style>
+</head>
+<body>
+
+<ul id="sport">
+  <li class="sport running">달리기</li>
+  <li class="sport swimming">수영</li>
+  <li class="sport climbing">등산</li>
+  <li class="sport fitness">헬스</li>
+</ul>
+
+<script>
+  // 일치하는 최초 출현 요소
+  const $sportList = document.querySelector('#sport');
+  console.log($sportList);
+  // 일치하는 모든 출현 요소
+  const $sportItems = $sportList.querySelectorAll('.sport');
+  console.log($sportItems);
+  for (let item of $sportItems) {
+    console.log(item.textContent);
+    item.style.color = 'darkgray';
+    console.log(item.style);
+  }
+  // CSS 선택자 문법에서 조합적인 선택자 활용 모두 가능함
+  const $swimming = document.querySelector('#sport .swimming');
+  console.log($swimming);
+
+</script>
+</body>
+</html>

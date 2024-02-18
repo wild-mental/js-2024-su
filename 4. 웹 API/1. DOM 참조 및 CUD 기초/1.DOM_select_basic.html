@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>돔 객체 참조 방법 기초</title>
+    <style>
+        #special-fruit {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello!</h1>
+    <ul>
+        <li class="fruit" id="mango">망고</li>
+        <li class="fruit" id="banana">바나나</li>
+        <li class="fruit" id="apple">사과</li>
+        <li class="fruit" id="watermelon">수박</li>
+        <li class="fruit" id="orange">오렌지</li>
+    </ul>
+    <script>
+        // document 에서 DOM TREE 구조에 대해서 직접 child 를 순회할 수도 있음
+        console.log(document.body.children[1].children[1]);
+
+        // JS 문법 중에 화면요소를 선택하는 컨벤션으로 JQuery 에서 쓰는 관습이 있음
+        const $banana = document.getElementById('banana');
+        console.log($banana)
+
+        // ID 를 바꿔서 특정 화면 요소가 미리 준비된 CSS 스타일을 받을 수 있게 함
+        const $specialFruit = document.getElementById('mango');
+        $specialFruit.attributes.id.value = 'special-fruit';
+
+        // 태그명으로 요소 객체를 얻어서 스타일을 직접 수정할 수도 있음
+        const $heading1 = document.getElementsByTagName('h1')[0];
+        console.log($heading1);
+        $heading1.style.color = 'cornflowerblue';
+
+        // 클래스명으로 화면 요소 선택
+        const $fruitItems = document.getElementsByClassName('fruit');
+        for (let item of $fruitItems) {
+            console.log(item);
+        }
+    </script>
+</body>
+</html>
