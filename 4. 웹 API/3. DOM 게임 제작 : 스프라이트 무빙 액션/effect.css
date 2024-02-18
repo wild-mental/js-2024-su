@@ -1,12 +1,11 @@
 /*  캐릭터 애니메이팅  */
 #user-character {
-    background-image: url('img_character/front_stand.png');
     width: 120px;
     height: 130px;
     overflow: hidden;
     animation-fill-mode: forwards;
     transition: forward-step, backward-step, left-step, right-step 500ms linear 0s,
-                transform 200ms linear 0s;
+                transform 100ms linear 0s;
 }
 
 @keyframes forward-step {
@@ -47,8 +46,8 @@
 }
 
 .pause-forward {
-    animation: forward-step 500ms infinite;
     animation-play-state: paused;
+    background-image: url('img_character/front_stand.png');
 }
 .running-forward {
     animation: forward-step 500ms infinite;
@@ -93,8 +92,8 @@
 }
 
 .pause-backward {
-    animation: backward-step 500ms infinite;
     animation-play-state: paused;
+    background-image: url('img_character/back_stand.png');
 }
 .running-backward {
     animation: backward-step 500ms infinite;
@@ -139,8 +138,8 @@
 }
 
 .pause-left {
-    animation: left-step 500ms infinite;
     animation-play-state: paused;
+    background-image: url('img_character/left_stand.png');
 }
 .running-left {
     animation: left-step 500ms infinite;
@@ -184,8 +183,8 @@
 }
 
 .pause-right {
-    animation: right-step 500ms infinite;
     animation-play-state: paused;
+    background-image: url('img_character/right_stand.png');
 }
 .running-right {
     animation: right-step 500ms infinite;

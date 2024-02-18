@@ -13,6 +13,10 @@ images.forEach(image => {
 
 // 2. 캐릭터 요소 선택
 const $userCharacter = document.getElementById('user-character');
+document.addEventListener('DOMContentLoaded', function (){
+        $userCharacter.setAttribute('style', `background-image: url('${imgDir}front_stand.png');`)
+    }
+)
 
 // 3. 캐릭터 이동 관련 변수 선언
 const characterLocation = {
@@ -45,12 +49,11 @@ function pauseAnimation(key) {
 // 4. 캐릭터 이동 제어를 위한 방향키 이벤트 리스너 부착
 document.addEventListener('keydown', (event) => {
     // 4-1. 이벤트 키 수신
-    const key = event.key;
+    if (!Object.keys(animationPostfix).includes(event.key)){
+        return;
+    }
 
-    // 4-2. 키 입력에 따른 캐릭터 애니메이션 재생시작
-    playAnimation(key);
-
-    // 4-3. 키 입력에 따른 캐릭터 좌표 수정
+    // 4-2. 키 입력에 따른 캐릭터 좌표 수정
     // switch (key) {
     //     case 'ArrowUp':
     //         if (characterLocation.y !== 0) {
@@ -72,8 +75,11 @@ document.addEventListener('keydown', (event) => {
     //         break;
     // }
 
-    // 4-3-2. 함수객체 적용 버전
-    moveTo[key]();
+    // 4-2-2. 함수객체 적용 버전
+    moveTo[event.key]();
+
+    // 4-3. 키 입력에 따른 캐릭터 애니메이션 재생시작
+    setTimeout(() => {playAnimation(event.key)}, 100);
 
     // 4. 캐릭터 위치 이동
     $userCharacter.setAttribute('style', `transform: translate(${characterLocation.x}px, ${characterLocation.y}px)`);
