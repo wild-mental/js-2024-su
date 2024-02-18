@@ -12,13 +12,14 @@ images.forEach(image => {
 });
 
 // 2. 캐릭터 요소 선택
+// const $characterContainer = document.getElementsByClassName('character-container')[0];
 const $userCharacter = document.getElementById('user-character');
 document.addEventListener('DOMContentLoaded', function (){
         $userCharacter.setAttribute('style', `background-image: url('${imgDir}front_stand.png');`)
     }
 )
 
-// 3. 캐릭터 이동 관련 변수 선언
+// 3. 캐릭터 이동 관련 변수 및 메서드 선언
 const characterLocation = {
     x: 0, y: 0
 }
@@ -48,7 +49,7 @@ function pauseAnimation(key) {
 
 // 4. 캐릭터 이동 제어를 위한 방향키 이벤트 리스너 부착
 document.addEventListener('keydown', (event) => {
-    // 4-1. 이벤트 키 수신
+    // 4-1. 이벤트 키 검사
     if (!Object.keys(animationPostfix).includes(event.key)){
         return;
     }
@@ -75,18 +76,23 @@ document.addEventListener('keydown', (event) => {
     //         break;
     // }
 
-    // 4-2-2. 함수객체 적용 버전
+    // 4-3. 함수형 프로그래밍 : 함수객체 적용 버전으로 개선
     moveTo[event.key]();
 
-    // 4-3. 키 입력에 따른 캐릭터 애니메이션 재생시작
+    // 4-4. 키 입력에 따른 캐릭터 애니메이션 재생시작
     setTimeout(() => {playAnimation(event.key)}, 100);
 
-    // 4. 캐릭터 위치 이동
+    // 4-5. 캐릭터 위치 이동
+    // $characterContainer.setAttribute('style', `transform: translate(${characterLocation.x}px, ${characterLocation.y}px)`);
     $userCharacter.setAttribute('style', `transform: translate(${characterLocation.x}px, ${characterLocation.y}px)`);
 });
 
 // 5. 방향키 입력 종료 감지 리스너 부착
 document.addEventListener('keyup', (event) => {
-    // CSS 애니메이션 일시정지
+    // 5-1. 이벤트 키 검사
+    if (!Object.keys(animationPostfix).includes(event.key)){
+        return;
+    }
+    // 5-2. CSS 애니메이션 일시정지
     setTimeout(() => {pauseAnimation(event.key)}, 200);
 });
