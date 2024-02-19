@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>이벤트 전파가 부모요소로 이어지는 것을 막아보자!</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        .root {
+            width: 400px;
+            height: 400px;
+        }
+        .parent {
+            width: 300px;
+            height: 300px;
+        }
+        .child {
+            width: 200px;
+            height: 200px;
+        }
+        .grand-child {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="root bg-primary">
+        <div class="parent bg-secondary">
+            <div class="child bg-warning">
+                <div class="grand-child bg-danger"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const $body = document.querySelector('body');
+        const $root = document.querySelector('.root');
+        const $parent = document.querySelector('.parent');
+        const $child = document.querySelector('.child');
+        const $grandChild = document.querySelector('.grand-child');
+        console.log(
+            $body, $root, $parent, $child, $grandChild
+        );
+
+
+        $body.addEventListener('click', (e) => {
+                alert(`${$body.tagName} - ${e.target}`)
+            }
+        )
+        $root.addEventListener('click', (e) => {
+                alert(`${$root.className} - ${e.target}`)
+            }
+        )
+        $parent.addEventListener('click', (e) => {
+                e.stopPropagation();
+                alert(`${$parent.className} - ${e.target}`)
+            }
+        )
+        $child.addEventListener('click', (e) => {
+                alert(`${$child.className} - ${e.target}`)
+            }
+        )
+        $grandChild.addEventListener('click', (e) => {
+                e.stopPropagation();
+                alert(`${$grandChild.className} - ${e.target}`)
+            }
+        )
+
+
+    </script>
+</body>
+</html>
