@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM 객체 속성 조작을 메서드로 수행해 보자</title>
+    <style>
+        .box {
+            border: black 3px solid;
+            width: 100px;
+            height: 100px;
+        }
+        #important-item {
+            background-color: red;
+        }
+        .secondary-item {
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <!--  JS 가 알아볼 수 있게 전용 속성을 만들어주자!  -->
+    <div class="box" item-type="important">중요한 아이템!</div>
+    <div class="box" item-type="secondary">2등급 아이템!</div>
+
+    <script>
+        const $boxes = document.getElementsByClassName('box');
+        console.log($boxes);  // 유사 배열
+        // Array 객체가 유사 배열에 대한 다양한 메서드를 지원한다!
+        console.log(Array.from($boxes));  // 진짜 배열
+        for (let item of $boxes) {
+            console.log(item.attributes['item-type'].value);
+            let itemType = item.attributes['item-type'].value;
+            if (itemType === 'important') {
+                item.setAttribute('id', 'important-item');
+            } else if (itemType === 'secondary') {
+                // item.setAttribute('class', 'secondary-item');
+                // 클래스에 대해서는 classList 로 특별하게 다뤄주어야 한다!
+                item.classList.add('secondary-item');
+            }
+
+            // getAttribute 로 속성 전체 read
+            console.log(`getAttribute 메서드로 값 접근 : ${item.getAttribute('item-type')}`)
+        }
+    </script>
+</body>
+</html>

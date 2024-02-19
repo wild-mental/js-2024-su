@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS 객체에 프로퍼티로 이벤트 핸들러 할당</title>
+</head>
+<body>
+
+    <div>
+        <button id="btn1">이벤트 1</button>
+        <button id="btn2">이벤트 2</button>
+        <button id="btn3">이벤트 3</button>
+    </div>
+
+    <script>
+        const welcomeHandler = ()=>{
+            alert("Welcome to JS Handler!!")
+        }
+        const goodbyeHandler = ()=>{
+            alert("Bye bye to HTML Handler!!")
+        }
+        // JS 문법만으로 충분히 이벤트 부여 가능!
+        const $btn1 = document.querySelector('#btn1');
+        $btn1.onclick = welcomeHandler;
+        $btn1.onclick = goodbyeHandler;
+        // HTML 방식으로는 이벤트 2개 이상 붙일 수 있었는데???!?!
+        // JS 에서는 addEventListener(); 메서드를 사용해야 한다.
+
+        const $btn2 = document.querySelector('#btn2');
+        $btn2.onmouseover = () => {
+            $btn2.style.background = 'red';
+        }
+        $btn2.onmouseleave = () => {
+            $btn2.style.background = 'yellow';
+            // $btn2.style.fontSize = '30px';
+        }
+
+        // setTimeout(<function>, timeout)
+        setTimeout(
+            () => {$btn2.onmouseover = null},
+            3000
+        )
+
+        // 여러 개의 핸들러를 하나의 요소에 한 종류의 액션으로 트리거 할 수 있을까?
+        const $btn3 = document.querySelector('#btn3');
+        $btn3.addEventListener('click', welcomeHandler);
+        $btn3.addEventListener('click', () => {
+            $btn3.style.backgroundColor = 'blue';
+        })
+        $btn3.addEventListener('click', () => {
+            $btn3.style.fontSize = '50px';
+        })
+    </script>
+</body>
+</html>

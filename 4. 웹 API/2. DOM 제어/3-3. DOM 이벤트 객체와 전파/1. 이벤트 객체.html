@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>이벤트 객체를 받아 정보를 확인합니다!</title>
+</head>
+<body>
+    <h1>아무곳이나 클릭하세요!</h1>
+    <em class="click-message"></em>
+
+    <script>
+        document.addEventListener('click', (event) => {
+            console.log("아무 곳이나 클릭했음");
+            console.log(event);
+            const $em = document.querySelector('.click-message');
+            $em.textContent = `클릭한 위치 : ${event.x}, ${event.y}`;
+
+            const e = event;
+            console.log(e.type);
+            console.log(e.target);  // 클릭한 위치를 좌표 뿐 아니라 요소 단위로 볼 수 있구나!
+            console.log(e.currentTarget);
+            console.log(e.timeStamp);
+
+        })
+        document.addEventListener('keydown', (e) => {
+            console.log(e);
+
+            console.log(e.type);
+            console.log(e.target);
+            console.log(e.currentTarget);
+            console.log(e.timeStamp);
+        })
+    </script>
+
+</body>
+</html>

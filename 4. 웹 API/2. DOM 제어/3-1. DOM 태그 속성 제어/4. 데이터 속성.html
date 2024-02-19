@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS 의 데이터 속성 접근</title>
+<!--
+HTML 문서를 가지고
+화면에 표시되는 스타일만 제어하는게 아니라,
+
+프로그래밍, 내부 로직, 등등 보여지지 않는 것을 다루고 싶을 때
+스타일에는 영향을 줄 수 없는 속성을 다루고 싶어졌음
+=> 실수로 영향을 줄까봐, 아예 차단되어 있는 속성들
+-->
+</head>
+<body>
+
+    <ul class="users">
+        <li data-userid="9901" data-userrole="admin">최상위 슈퍼관리자</li>
+        <li data-userid="9902" data-userrole="normal">일반 회원</li>
+    </ul>
+
+    <script>
+        // 배열 처럼 생겼지만 변수가 하나씩 생성된다.
+        const [$u1, $u2] = document.querySelectorAll('.users li');
+        console.log($u1, $u2);
+
+        console.log($u1.dataset);
+        console.log($u2.dataset);
+
+        // data- 부분이 생략됨 : 짧고 간략한 변수명으로 데이터 핸들링 가능
+        console.log($u1.dataset.userid);
+        console.log($u1.dataset.userrole);
+        console.log($u2.dataset.userid);
+        console.log($u2.dataset.userrole);
+
+        // 하위 요소, 관련 요소 등에 대해서 JS 로 적극적인 제어가 필요할 때
+        // 서버에서 값을 받아온다든지, 하는 부분에 사용합니다.
+
+    </script>
+
+</body>
+</html>
