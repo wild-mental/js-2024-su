@@ -1,0 +1,194 @@
+#zeldarink {
+    width: 120px;
+    height: 130px;
+    /* 캐릭터 자체가 하나의 백그라운드를 고정적으로 가지지 못하게 정적인 부분에 배경 제거 */
+    /*background-image: url("../img_zeldarink/front_stand.png");*/
+    background-repeat: no-repeat;
+    /*transform: translate(100px, 100px);*/
+    /*animation-fill-mode: forwards;  !* 애니메이션 정지 시, 중단된 위치의 -% 효과가 유지되는 설정값 *!*/
+}
+
+@keyframes forward-step {
+    0% {
+        background-image: url("../img_zeldarink/front_stand.png");
+    }
+    10% {
+        background-image: url("../img_zeldarink/front_walk0.png");
+    }
+    20% {
+        background-image: url("../img_zeldarink/front_walk1.png");
+    }
+    30% {
+        background-image: url("../img_zeldarink/front_walk2.png");
+    }
+    40% {
+        background-image: url("../img_zeldarink/front_walk3.png");
+    }
+    50% {
+        background-image: url("../img_zeldarink/front_walk4.png");
+    }
+    60% {
+        background-image: url("../img_zeldarink/front_walk5.png");
+    }
+    70% {
+        background-image: url("../img_zeldarink/front_walk6.png");
+    }
+    80% {
+        background-image: url("../img_zeldarink/front_walk7.png");
+    }
+    90% {
+        background-image: url("../img_zeldarink/front_walk8.png");
+    }
+    100% {
+        background-image: url("../img_zeldarink/front_walk9.png");
+    }
+}
+
+.walking-forward {
+    animation: forward-step 500ms infinite;
+    animation-play-state: running;
+}
+
+.pause-forward {
+    /*animation: forward-step 500ms infinite;*/
+    animation-play-state: paused;
+    background-image: url("../img_zeldarink/front_stand.png");
+}
+
+@keyframes backward-step {
+    0% {
+        background-image: url("../img_zeldarink/back_stand.png");
+    }
+    10% {
+        background-image: url("../img_zeldarink/back_walk0.png");
+    }
+    20% {
+        background-image: url("../img_zeldarink/back_walk1.png");
+    }
+    30% {
+        background-image: url("../img_zeldarink/back_walk2.png");
+    }
+    40% {
+        background-image: url("../img_zeldarink/back_walk3.png");
+    }
+    50% {
+        background-image: url("../img_zeldarink/back_walk4.png");
+    }
+    60% {
+        background-image: url("../img_zeldarink/back_walk5.png");
+    }
+    70% {
+        background-image: url("../img_zeldarink/back_walk6.png");
+    }
+    80% {
+        background-image: url("../img_zeldarink/back_walk7.png");
+    }
+    90% {
+        background-image: url("../img_zeldarink/back_walk8.png");
+    }
+    100% {
+        background-image: url("../img_zeldarink/back_walk9.png");
+    }
+}
+
+.walking-backward {
+    animation: backward-step 500ms infinite;
+    animation-play-state: running;
+}
+
+.pause-backward {
+    animation-play-state: paused;
+    background-image: url("../img_zeldarink/back_stand.png");
+}
+
+@keyframes left-step {
+    0% {
+        background-image: url("../img_zeldarink/left_stand.png");
+    }
+    10% {
+        background-image: url("../img_zeldarink/left_walk0.png");
+    }
+    20% {
+        background-image: url("../img_zeldarink/left_walk1.png");
+    }
+    30% {
+        background-image: url("../img_zeldarink/left_walk2.png");
+    }
+    40% {
+        background-image: url("../img_zeldarink/left_walk3.png");
+    }
+    50% {
+        background-image: url("../img_zeldarink/left_walk4.png");
+    }
+    60% {
+        background-image: url("../img_zeldarink/left_walk5.png");
+    }
+    70% {
+        background-image: url("../img_zeldarink/left_walk6.png");
+    }
+    80% {
+        background-image: url("../img_zeldarink/left_walk7.png");
+    }
+    90% {
+        background-image: url("../img_zeldarink/left_walk8.png");
+    }
+    100% {
+        background-image: url("../img_zeldarink/left_walk9.png");
+    }
+}
+
+.walking-left {
+    animation: left-step 500ms infinite;
+    animation-play-state: running;
+}
+
+.pause-left {
+    animation-play-state: paused;
+    background-image: url("../img_zeldarink/left_stand.png");
+}
+
+@keyframes right-step {
+    0% {
+        background-image: url("../img_zeldarink/right_stand.png");
+    }
+    10% {
+        background-image: url("../img_zeldarink/right_walk0.png");
+    }
+    20% {
+        background-image: url("../img_zeldarink/right_walk1.png");
+    }
+    30% {
+        background-image: url("../img_zeldarink/right_walk2.png");
+    }
+    40% {
+        background-image: url("../img_zeldarink/right_walk3.png");
+    }
+    50% {
+        background-image: url("../img_zeldarink/right_walk4.png");
+    }
+    60% {
+        background-image: url("../img_zeldarink/right_walk5.png");
+    }
+    70% {
+        background-image: url("../img_zeldarink/right_walk6.png");
+    }
+    80% {
+        background-image: url("../img_zeldarink/right_walk7.png");
+    }
+    90% {
+        background-image: url("../img_zeldarink/right_walk8.png");
+    }
+    100% {
+        background-image: url("../img_zeldarink/right_walk9.png");
+    }
+}
+
+.walking-right {
+    animation: right-step 500ms infinite;
+    animation-play-state: running;
+}
+
+.pause-right {
+    animation-play-state: paused;
+    background-image: url("../img_zeldarink/right_stand.png");
+}

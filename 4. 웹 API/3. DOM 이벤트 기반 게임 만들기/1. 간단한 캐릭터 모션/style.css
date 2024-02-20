@@ -1,0 +1,52 @@
+#runningman {
+    width: 150px;
+    height: 191px;
+    background-image: url('../img_runningman/runningman1.png');
+    /*animation: forward-run 500ms linear infinite 0s;*/
+    /*animation-play-state: paused;*/
+}
+
+/*#runningman:hover {*/
+/*    animation: forward-run 500ms linear infinite 0s;*/
+/*    animation-play-state: running;*/
+/*}*/
+
+.play-running {
+    animation: forward-run 500ms linear infinite 0s;
+    animation-play-state: running;
+}
+
+.pause-running {
+    animation: forward-run 500ms linear infinite 0s;
+    animation-play-state: paused;
+}
+
+@keyframes forward-run {
+    0% {
+        background-image: url('../img_runningman/runningman1.png');
+    }
+    12%{
+        background-image: url('../img_runningman/runningman2.png');
+    }
+    25% {
+        background-image: url('../img_runningman/runningman3.png');
+    }
+    37% {
+        background-image: url('../img_runningman/runningman4.png');
+    }
+    50% {
+        background-image: url('../img_runningman/runningman5.png');
+    }
+    62% {
+        background-image: url('../img_runningman/runningman6.png');
+    }
+    75% {
+        background-image: url('../img_runningman/runningman7.png');
+    }
+    87% {
+        background-image: url('../img_runningman/runningman8.png');
+    }
+    100% {
+        background-image: url('../img_runningman/runningman1.png');
+    }
+}
