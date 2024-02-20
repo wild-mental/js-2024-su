@@ -30,11 +30,14 @@ const animationPostfix = {
     ArrowLeft: 'left',
     ArrowRight: 'right'
 }
+const characterMove = function() {
+    $userCharacter.setAttribute('style', `transform: translate(${characterLocation.x}px, ${characterLocation.y}px)`)
+}
 const moveTo = {
-    ArrowDown: (function forward() { return function () { characterLocation.y += step; } })(),
-    ArrowUp: (function backward() { return function(){ if (characterLocation.y !== 0) { characterLocation.y -= step; } } })(),
-    ArrowLeft: (function forward() { return function(){ if (characterLocation.x !== 0) { characterLocation.x -= step; } } })(),
-    ArrowRight: (function forward() { return function(){ characterLocation.x += step; } })()
+    ArrowDown: (function forward() { return function () { characterLocation.y += step; characterMove(); } })(),
+    ArrowUp: (function backward() { return function(){ if (characterLocation.y !== 0) { characterLocation.y -= step; characterMove(); } } })(),
+    ArrowLeft: (function left() { return function(){ if (characterLocation.x !== 0) { characterLocation.x -= step; characterMove(); } } })(),
+    ArrowRight: (function right() { return function(){ characterLocation.x += step; characterMove(); } })(),
 }
 const runningActions = Object.values(animationPostfix).map(direction => `running-${direction}`);
 const pausedActions = Object.values(animationPostfix).map(direction => `pause-${direction}`);
@@ -81,10 +84,6 @@ document.addEventListener('keydown', (event) => {
 
     // 4-4. 키 입력에 따른 캐릭터 애니메이션 재생시작
     setTimeout(() => {playAnimation(event.key)}, 100);
-
-    // 4-5. 캐릭터 위치 이동
-    // $characterContainer.setAttribute('style', `transform: translate(${characterLocation.x}px, ${characterLocation.y}px)`);
-    $userCharacter.setAttribute('style', `transform: translate(${characterLocation.x}px, ${characterLocation.y}px)`);
 });
 
 // 5. 방향키 입력 종료 감지 리스너 부착

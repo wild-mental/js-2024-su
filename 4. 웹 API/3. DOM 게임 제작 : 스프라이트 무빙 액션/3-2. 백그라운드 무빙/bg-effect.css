@@ -24,12 +24,13 @@ body {
     position: absolute;
     /*  상하 정렬은 상단 고정  */
     top: 0;
-    /*  가로는 flex 에 따른 중앙정렬  */
-    left: auto;
+    /*  맵 표시 너비는 커스텀 지정하고 flex 에 따라 여백 중앙정렬  */
     min-width: 2220px;
+    left: auto;
+    /*  높이는 화면 가득 채움  */
     height: 100vh;
     /*  백그라운드 이동 효과에 적용을 위한 transition 설정  */
-    transition: 200ms linear;
+    transition: all 200ms linear;
 }
 
 #user-character {

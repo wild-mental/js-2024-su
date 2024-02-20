@@ -4,8 +4,6 @@
     height: 130px;
     overflow: hidden;
     animation-fill-mode: forwards;
-    transition: forward-step, backward-step, left-step, right-step 500ms linear 0s,
-                transform 100ms linear 0s;
 }
 
 @keyframes forward-step {
