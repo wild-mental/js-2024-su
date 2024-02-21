@@ -1,3 +1,5 @@
+'use strict'
+
 // 1. 캐릭터 요소 선택 및 확인
 const $userCharacter = document.getElementById('zeldarink');
 // console.log($userCharacter);
